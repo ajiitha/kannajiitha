@@ -24,7 +24,7 @@
             display: flex;
             flex-direction: row; /* Display side by side */
             align-items: flex-start; /* Align to the top */
-            justify-content: space-between; /* Separate messages and picture */
+            justify-content: space-between; /* Separate messages and right side */
         }
         .left-side {
             width: 48%; /* Adjust width for left side */
@@ -32,7 +32,11 @@
         }
         .right-side {
             width: 48%; /* Adjust width for right side */
-            text-align: center; /* Center-align the picture and buttons */
+            text-align: center; /* Center-align the picture and button */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
         }
         h1 {
             color: #ff1493;
@@ -107,22 +111,6 @@
             50% { transform: translateY(-10px); }
             100% { transform: translateY(0); }
         }
-        /* Style for the upload button */
-        #upload-button {
-            background-color: #ff1493;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-            border-radius: 5px;
-            font-family: 'Arial', sans-serif;
-            font-size: 18px;
-            margin-top: 20px;
-        }
-        /* Hide the file input */
-        #file-upload {
-            display: none;
-        }
     </style>
 </head>
 <body>
@@ -140,18 +128,20 @@
             </div>
         </div>
         <div class="right-side">
-            <div class="envelope">
-                <label for="file-upload" id="upload-button">Upload Secret Picture</label>
-                <input type="file" id="file-upload" accept="image/*">
-                <img id="uploaded-image" src="love.jpeg" alt="You and your boyfriend">
+            <div>
+                <div class="envelope">
+                    <img id="uploaded-image" src="love.jpeg" alt="You and your boyfriend">
+                </div>
+                <br>
+                <button class="play-button" onclick="playSong()">Play "Our secret song"</button>
+                <!-- Audio for the song (hidden by default) -->
+                <audio id="music" controls style="display: none;">
+                    <source src="song.mp3" type="audio/mpeg">
+                </audio>
             </div>
             <br>
-            <!-- Play button for the song -->
-            <button class="play-button" onclick="playSong()">Play "Our secret song"</button>
-            <!-- Audio for the song (hidden by default) -->
-            <audio id="music" controls style="display: none;">
-                <source src="song.mp3" type="audio/mpeg">
-            </audio>
+            <label for="file-upload" class="file-label">Upload Secret Picture</label>
+            <input type="file" id="file-upload" class="file-input" accept="image/*">
         </div>
     </div>
 
@@ -176,6 +166,4 @@
     </script>
 </body>
 </html>
-
-
 
