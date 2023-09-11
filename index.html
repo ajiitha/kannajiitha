@@ -294,3 +294,57 @@
     </script>
 </body>
 </html>
+
+/* Styling for the falling hearts */
+        .heart {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: red;
+            clip-path: polygon(
+                50% 15%, 60% 0, 75% 0, 50% 40%, 25% 0, 40% 0, 50% 15%
+            );
+            animation: fall 2s linear infinite;
+        }
+
+        /* Animation for falling hearts */
+        @keyframes fall {
+            0% {
+                transform: translateY(-100px);
+                opacity: 1;
+                animation-timing-function: ease-in;
+            }
+            100% {
+                transform: translateY(100vh);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Rest of your HTML code ... -->
+
+    <!-- Falling hearts -->
+    <div id="hearts-container">
+        <!-- Add heart elements here using JavaScript -->
+    </div>
+
+    <script>
+        // JavaScript code for creating and animating falling hearts
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.style.left = `${Math.random() * 100}vw`; // Random horizontal position
+            document.getElementById('hearts-container').appendChild(heart);
+
+            // Remove the heart element after animation completes
+            heart.addEventListener('animationiteration', () => {
+                heart.remove();
+            });
+        }
+
+        // Trigger heart creation at intervals (adjust interval as needed)
+        setInterval(createHeart, 1000); // Creates a heart every 1 second
+    </script>
+</body>
+</html>
