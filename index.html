@@ -21,6 +21,18 @@
             border: 2px solid #ffb6c1;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: row; /* Display side by side */
+            align-items: flex-start; /* Align to the top */
+            justify-content: space-between; /* Separate messages and picture */
+        }
+        .left-side {
+            width: 48%; /* Adjust width for left side */
+            text-align: left; /* Align messages to the left */
+        }
+        .right-side {
+            width: 48%; /* Adjust width for right side */
+            text-align: center; /* Center-align the picture and button */
         }
         h1 {
             color: #ff1493;
@@ -60,15 +72,16 @@
             position: relative;
             display: inline-block;
             cursor: pointer;
-            animation: floatEnvelope 3s infinite ease-in-out;
         }
         .envelope img {
             max-width: 200px; /* Increased the image size */
             border-radius: 5px;
-            transition: transform 0.3s ease-in-out;
+            transition: transform 0.3s ease-in-out, /* Transition for hover */
+                        opacity 0.3s ease-in-out; /* Transition for opacity */
         }
         .envelope img:hover {
             transform: scale(1.1);
+            opacity: 0.8; /* Reduce opacity on hover */
         }
         /* Styling for love quotes */
         .love-quotes {
@@ -88,39 +101,40 @@
             font-size: 18px;
             margin-top: 20px;
         }
-        /* Animation for the envelope */
-        @keyframes floatEnvelope {
-            0%, 100% { transform: translateY(0); }
+        /* Animation for the picture */
+        @keyframes floatImage {
+            0% { transform: translateY(0); }
             50% { transform: translateY(-10px); }
+            100% { transform: translateY(0); }
         }
     </style>
 </head>
 <body>
     <div id="container">
-        <h1>Secret Messages by Ajiitha and Kanna</h1>
-        <div class="envelope">
-            <img id="uploaded-image" src="love.jpeg" alt="You and your boyfriend">
+        <div class="left-side">
+            <h1>Secret Messages by Ajiitha and Kanna</h1>
+            <textarea id="message-box" placeholder="Type your secret message here"></textarea>
+            <br>
+            <button id="send-button">Send</button>
+            <div id="output"></div>
+            <!-- Love quotes section -->
+            <div class="love-quotes">
+                <p>"Every moment with you is a treasure."</p>
+                <p>"You make my heart smile."</p>
+            </div>
         </div>
-        <br>
-        <textarea id="message-box" placeholder="Type your secret message here"></textarea>
-        <br>
-        <button id="send-button">Send</button>
-        <div id="output"></div>
-        
-        <!-- Love quotes section -->
-        <div class="love-quotes">
-            <p>"Every moment with you is a treasure."</p>
-            <p>"You make my heart smile."</p>
+        <div class="right-side">
+            <div class="envelope">
+                <img id="uploaded-image" src="love.jpeg" alt="You and your boyfriend">
+            </div>
+            <br>
+            <!-- Play button for the song -->
+            <button class="play-button" onclick="playSong()">Play "Our secret song"</button>
+            <!-- Audio for the song (hidden by default) -->
+            <audio id="music" controls style="display: none;">
+                <source src="song.mp3" type="audio/mpeg">
+            </audio>
         </div>
-        
-        <!-- Play button for the song -->
-        <button class="play-button" onclick="playSong()">Play "Him and I" by Halsey and G-Eazy</button>
-        
-        <!-- Audio for the song (hidden by default) -->
-        <audio id="music" controls style="display: none;">
-            <source src="song.mp3" type="audio/mpeg">
-        
-        </audio>
     </div>
 
     <script>
@@ -144,4 +158,5 @@
     </script>
 </body>
 </html>
+
 
