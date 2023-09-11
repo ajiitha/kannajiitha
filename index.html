@@ -203,6 +203,7 @@
             <!-- Love quotes section -->
             <div class="love-quotes">
                 <p>"Where did you come from?"</p>
+                <p>"I love you more."</p>
             </div>
         </div>
         <div class="right-side">
@@ -268,7 +269,27 @@
 
             // Scroll to the bottom of the message container
             messageContainer.scrollTop = messageContainer.scrollHeight;
+
+            // Store the message in local storage
+            var messages = JSON.parse(localStorage.getItem("messages")) || [];
+            messages.push(message);
+            localStorage.setItem("messages", JSON.stringify(messages));
         });
+
+        // JavaScript code to load and display stored messages
+        window.onload = function () {
+            var messages = JSON.parse(localStorage.getItem("messages")) || [];
+            var messageContainer = document.getElementById("message-container");
+
+            messages.forEach(function (message) {
+                var messageElement = document.createElement("p");
+                messageElement.innerHTML = "<strong>You:</strong> " + message;
+                messageContainer.appendChild(messageElement);
+            });
+
+            // Scroll to the bottom of the message container
+            messageContainer.scrollTop = messageContainer.scrollHeight;
+        };
 
         // JavaScript code for playing the song
         function playSong() {
@@ -292,5 +313,6 @@
     </script>
 </body>
 </html>
+
 
 
