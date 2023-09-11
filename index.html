@@ -11,10 +11,11 @@
             background-color: #ffe4e1;
             margin: 0;
             padding: 0;
+            cursor: url('heart.png'), auto; /* Set the custom cursor */
         }
         #container {
             width: 80%;
-            max-width: 1000px; /* Increased the maximum width */
+            max-width: 1000px;
             margin: 0 auto;
             padding: 20px;
             background-color: #fff;
@@ -22,18 +23,18 @@
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
             display: flex;
-            flex-direction: row; /* Display side by side */
-            align-items: flex-start; /* Align to the top */
-            justify-content: space-between; /* Separate messages and right side */
-            flex-wrap: wrap; /* Wrap to the next line if necessary */
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: space-between;
+            flex-wrap: wrap;
         }
         .left-side {
-            width: 48%; /* Adjust width for left side */
-            text-align: left; /* Align messages to the left */
+            width: 48%;
+            text-align: left;
         }
         .right-side {
-            width: 48%; /* Adjust width for right side */
-            text-align: center; /* Center-align the picture and button */
+            width: 48%;
+            text-align: center;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -72,29 +73,26 @@
             margin: 5px 0;
             border-radius: 5px;
         }
-        /* Styling for the envelope and image */
         .envelope {
             position: relative;
             display: inline-block;
             cursor: pointer;
         }
         .envelope img {
-            max-width: 200px; /* Increased the image size */
+            max-width: 200px;
             border-radius: 5px;
-            transition: transform 0.3s ease-in-out, /* Transition for hover */
-                        opacity 0.3s ease-in-out; /* Transition for opacity */
+            transition: transform 0.3s ease-in-out,
+                        opacity 0.3s ease-in-out;
         }
         .envelope img:hover {
             transform: scale(1.1);
-            opacity: 0.8; /* Reduce opacity on hover */
+            opacity: 0.8;
         }
-        /* Styling for love quotes */
         .love-quotes {
             margin-top: 20px;
             font-size: 20px;
             color: #ff1493;
         }
-        /* Styling for the play button */
         .play-button {
             background-color: #ff1493;
             color: #fff;
@@ -106,20 +104,18 @@
             font-size: 18px;
             margin-top: 20px;
         }
-        /* Animation for the picture */
         @keyframes floatImage {
             0% { transform: translateY(0); }
             50% { transform: translateY(-10px); }
             100% { transform: translateY(0); }
         }
-        /* Styling for the upload popup */
         .popup {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.7); /* Slightly darker background */
+            background-color: rgba(0, 0, 0, 0.7);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -128,11 +124,11 @@
         .popup-content {
             background-color: #fff;
             padding: 20px;
-            border-radius: 10px; /* Rounded corners */
+            border-radius: 10px;
             text-align: center;
         }
         .popup-content p {
-            font-size: 18px; /* Larger font size */
+            font-size: 18px;
             margin-bottom: 20px;
         }
         .popup-content button {
@@ -145,7 +141,6 @@
             font-family: 'Arial', sans-serif;
             font-size: 18px;
         }
-        /* Styling for the images */
         .images {
             display: flex;
             flex-wrap: wrap;
@@ -153,9 +148,8 @@
             margin-top: 20px;
         }
         .images img {
-            max-width: 600px; /* Adjusted max-width to make images fit */
+            max-width: 600px;
             margin: 200px;
-            
         }
     </style>
 </head>
@@ -204,7 +198,6 @@
         <img src="love2.jpeg" alt="Love 2">
         <img src="love4.jpeg" alt="Love 4"style="max-width: 700px; margin: 0;">
        <img src="love3.jpeg" alt="Love 3" style="max-width: 600px; margin: 0;">
-
     </div>
 
     <script>
