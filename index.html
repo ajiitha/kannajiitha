@@ -11,7 +11,6 @@
             background-color: #ffe4e1;
             margin: 0;
             padding: 0;
-            overflow: hidden;
         }
         #container {
             width: 80%;
@@ -156,31 +155,7 @@
         .images img {
             max-width: 600px; /* Adjusted max-width to make images fit */
             margin: 200px;
-        }
-        /* Animation for hearts */
-        .heart {
-            position: absolute;
-            width: 32px;
-            height: 32px;
-            background-image: url('heart.png'); /* Make sure to have 'heart.png' image in the same directory */
-            background-size: contain;
-            animation: floatHeart 5s linear infinite;
-            pointer-events: none;
-        }
-
-        @keyframes floatHeart {
-            0% {
-                transform: translateY(0);
-                opacity: 1;
-            }
-            50% {
-                transform: translateY(-100px);
-                opacity: 0.5;
-            }
-            100% {
-                transform: translateY(0);
-                opacity: 1;
-            }
+            
         }
     </style>
 </head>
@@ -227,12 +202,10 @@
     <!-- Images section -->
     <div class="images">
         <img src="love2.jpeg" alt="Love 2">
-        <img src="love4.jpeg" alt="Love 4" style="max-width: 700px; margin: 0;">
-        <img src="love3.jpeg" alt="Love 3" style="max-width: 600px; margin: 0;">
-    </div>
+        <img src="love4.jpeg" alt="Love 4"style="max-width: 700px; margin: 0;">
+       <img src="love3.jpeg" alt="Love 3" style="max-width: 600px; margin: 0;">
 
-    <!-- Heart animation -->
-    <div class="heart"></div>
+    </div>
 
     <script>
         // JavaScript code for handling messages
