@@ -51,7 +51,7 @@
             font-family: 'Arial', sans-serif;
             font-size: 16px;
         }
-        #send-button {
+        #send-button, .upload-button {
             background-color: #ff1493;
             color: #fff;
             border: none;
@@ -112,18 +112,6 @@
             50% { transform: translateY(-10px); }
             100% { transform: translateY(0); }
         }
-        /* Styling for the upload button */
-        .upload-button {
-            background-color: #ff1493;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-            border-radius: 5px;
-            font-family: 'Arial', sans-serif;
-            font-size: 18px;
-            margin-top: 20px;
-        }
         /* Styling for the upload popup */
         .popup {
             position: fixed;
@@ -150,9 +138,24 @@
             margin-top: 20px;
         }
         .images img {
-            max-width: 200px;
+            max-width: 150px; /* Set the desired width for images */
             margin: 10px;
             border-radius: 5px;
+        }
+        /* Styling for the file input and label */
+        .file-input {
+            display: none; /* Hide the file input */
+        }
+        .file-label {
+            background-color: #ff1493;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-family: 'Arial', sans-serif;
+            font-size: 18px;
+            margin-top: 20px;
         }
     </style>
 </head>
@@ -183,14 +186,10 @@
                 </audio>
             </div>
             <br>
-            <label for="file-upload" class="file-label">Upload Secret Picture</label>
+            <label for="file-upload" class="file-label">Choose file</label>
             <input type="file" id="file-upload" class="file-input" accept="image/*">
         </div>
     </div>
+    <!-- Images of us
 
-    <div class="images">
-        <!-- Add your pictures here -->
-        <img src="love2.jpeg" alt="You and your boyfriend">
-        <img src="love3.jpeg" alt="You and your boyfriend">
-        <img src="love4.jpeg" alt
 
