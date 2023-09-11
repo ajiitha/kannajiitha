@@ -177,6 +177,19 @@
             line-height: 1.5;
             text-align: left;
         }
+
+        /* Styling for the message container */
+        #message-container {
+            width: 100%;
+            text-align: left;
+            background-color: #ffecf6; /* Light pink background */
+            border-radius: 10px;
+            margin-top: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            overflow-y: scroll; /* Add scrollbars when messages overflow */
+            max-height: 200px; /* Limit the height of the message container */
+        }
     </style>
 </head>
 <body>
@@ -186,11 +199,10 @@
             <textarea id="message-box" placeholder="Type your secret message here"></textarea>
             <br>
             <button id="send-button">Send</button>
-            <div id="output"></div>
+            <div id="message-container"></div> <!-- Message container added here -->
             <!-- Love quotes section -->
             <div class="love-quotes">
-                <p>"Every moment with you is a treasure."</p>
-                <p>"You make my heart smile."</p>
+                <p>"Where did you come from?"</p>
             </div>
         </div>
         <div class="right-side">
@@ -245,8 +257,17 @@
         document.getElementById("send-button").addEventListener("click", function () {
             var message = document.getElementById("message-box").value;
             document.getElementById("message-box").value = "";
-            var output = document.getElementById("output");
-            output.innerHTML += "<p><strong>You:</strong> " + message + "</p>";
+
+            // Create a new message element
+            var messageElement = document.createElement("p");
+            messageElement.innerHTML = "<strong>You:</strong> " + message;
+
+            // Get the message container and append the new message
+            var messageContainer = document.getElementById("message-container");
+            messageContainer.appendChild(messageElement);
+
+            // Scroll to the bottom of the message container
+            messageContainer.scrollTop = messageContainer.scrollHeight;
         });
 
         // JavaScript code for playing the song
