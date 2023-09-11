@@ -153,8 +153,8 @@
             margin-top: 20px;
         }
         .images img {
-            max-width: 200px; /* Adjusted max-width to make images fit */
-            margin: 10px;
+            max-width: 500px; /* Adjusted max-width to make images fit */
+            margin: 200px;
         }
     </style>
 </head>
@@ -185,7 +185,7 @@
                 </audio>
             </div>
             <br>
-            <label for="file-upload" class="upload-button">Send Secret Picture</label>
+            <label for="file-upload" class="upload-button" onclick="openPopup()">Send Secret Picture</label>
         </div>
     </div>
 
@@ -224,9 +224,9 @@
         }
 
         // JavaScript code to open the NSFW warning popup
-        document.getElementById("file-upload").addEventListener("click", function () {
+        function openPopup() {
             document.getElementById("upload-popup").style.display = "block";
-        });
+        }
 
         // JavaScript code to close the NSFW warning popup
         function closePopup() {
@@ -235,3 +235,4 @@
     </script>
 </body>
 </html>
+
