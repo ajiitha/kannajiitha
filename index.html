@@ -2,11 +2,11 @@
 <html>
 <head>
     <title>Secret Messages by Ajiitha & Kanna</title>
-    <!-- Include the Roboto font -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
+    <!-- Include a cute font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Roboto', cursive, sans-serif;
+            font-family: 'Indie Flower', cursive, sans-serif; /* Use the cute font */
             text-align: center;
             background-color: #ffe4e1;
             margin: 0;
@@ -51,111 +51,31 @@
             font-family: 'Arial', sans-serif;
             font-size: 16px;
         }
-        #send-button, .upload-button {
+        /* Rest of your CSS styles remain the same */
+        /* ... */
+
+        /* Styling for buttons with a cute pink color */
+        .cute-button {
             background-color: #ff1493;
             color: #fff;
             border: none;
             padding: 10px 20px;
             cursor: pointer;
             border-radius: 5px;
-            font-family: 'Arial', sans-serif;
+            font-family: 'Indie Flower', cursive, sans-serif; /* Use the cute font */
             font-size: 18px;
         }
-        #output {
-            text-align: left;
-            margin-top: 20px;
-        }
-        #output p {
-            background-color: #ffebcd;
-            border: 2px solid #ff1493;
-            padding: 10px;
-            margin: 5px 0;
-            border-radius: 5px;
-        }
-        /* Styling for the envelope and image */
-        .envelope {
-            position: relative;
-            display: inline-block;
-            cursor: pointer;
-        }
-        .envelope img {
-            max-width: 200px; /* Increased the image size */
-            border-radius: 5px;
-            transition: transform 0.3s ease-in-out, /* Transition for hover */
-                        opacity 0.3s ease-in-out; /* Transition for opacity */
-        }
-        .envelope img:hover {
-            transform: scale(1.1);
-            opacity: 0.8; /* Reduce opacity on hover */
-        }
-        /* Styling for love quotes */
-        .love-quotes {
-            margin-top: 20px;
-            font-size: 20px;
-            color: #ff1493;
-        }
-        /* Styling for the play button */
-        .play-button {
-            background-color: #ff1493;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-            border-radius: 5px;
-            font-family: 'Arial', sans-serif;
-            font-size: 18px;
-            margin-top: 20px;
-        }
-        /* Animation for the picture */
-        @keyframes floatImage {
+
+        /* Animation for the envelope */
+        @keyframes floatEnvelope {
             0% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+            50% { transform: translateY(-5px); }
             100% { transform: translateY(0); }
         }
-        /* Styling for the upload popup */
-        .popup {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.7); /* Slightly darker background */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 1;
-        }
-        .popup-content {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 10px; /* Rounded corners */
-            text-align: center;
-        }
-        .popup-content p {
-            font-size: 18px; /* Larger font size */
-            margin-bottom: 20px;
-        }
-        .popup-content button {
-            background-color: #ff1493;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-            border-radius: 5px;
-            font-family: 'Arial', sans-serif;
-            font-size: 18px;
-        }
-        /* Styling for the images */
-        .images {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin-top: 20px;
-        }
-        .images img {
-            max-width: 600px; /* Adjusted max-width to make images fit */
-            margin: 200px;
-            
+
+        /* Custom cursor: Heart shape */
+        body {
+            cursor: url('heart-cursor.png'), auto;
         }
     </style>
 </head>
@@ -165,7 +85,7 @@
             <h1>Secret Messages by Ajiitha and Kanna</h1>
             <textarea id="message-box" placeholder="Type your secret message here"></textarea>
             <br>
-            <button id="send-button">Send</button>
+            <button id="send-button" class="cute-button">Send</button>
             <div id="output"></div>
             <!-- Love quotes section -->
             <div class="love-quotes">
@@ -179,14 +99,14 @@
                     <img id="uploaded-image" src="love.jpeg" alt="You and your boyfriend">
                 </div>
                 <br>
-                <button class="play-button" onclick="playSong()">Play "Our secret song"</button>
+                <button class="play-button cute-button" onclick="playSong()">Play "Our secret song"</button>
                 <!-- Audio for the song (hidden by default) -->
                 <audio id="music" controls style="display: none;">
                     <source src="song.mp3" type="audio/mpeg">
                 </audio>
             </div>
             <br>
-            <label for="file-upload" class="upload-button" onclick="openPopup()">Send Secret Picture</label>
+            <label for="file-upload" class="upload-button cute-button" onclick="openPopup()">Send Secret Picture</label>
             <input type="file" id="file-upload" style="display: none;">
         </div>
     </div>
@@ -195,17 +115,19 @@
     <div class="popup" id="upload-popup" style="display: none;">
         <div class="popup-content">
             <p>No NSFW pix allowed hehe</p>
-            <button onclick="closePopup()">OK</button>
+            <button onclick="closePopup()" class="cute-button">OK</button>
         </div>
     </div>
 
     <!-- Images section -->
     <div class="images">
         <img src="love2.jpeg" alt="Love 2">
-        <img src="love4.jpeg" alt="Love 4"style="max-width: 700px; margin: 0;">
-       <img src="love3.jpeg" alt="Love 3" style="max-width: 600px; margin: 0;">
-
+        <img src="love4.jpeg" alt="Love 4" style="max-width: 700px; margin: 0;">
+        <img src="love3.jpeg" alt="Love 3" style="max-width: 600px; margin: 0;">
     </div>
+
+    <!-- Heart animation -->
+    <div class="heart"></div>
 
     <script>
         // JavaScript code for handling messages
@@ -238,3 +160,4 @@
     </script>
 </body>
 </html>
+
