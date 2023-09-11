@@ -111,6 +111,18 @@
             50% { transform: translateY(-10px); }
             100% { transform: translateY(0); }
         }
+        /* Styling for the upload button */
+        .upload-button {
+            background-color: #ff1493;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-family: 'Arial', sans-serif;
+            font-size: 18px;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
@@ -139,31 +151,4 @@
                     <source src="song.mp3" type="audio/mpeg">
                 </audio>
             </div>
-            <br>
-            <label for="file-upload" class="file-label">Upload Secret Picture</label>
-            <input type="file" id="file-upload" class="file-input" accept="image/*">
-        </div>
-    </div>
-
-    <script>
-        // JavaScript code for handling messages
-        document.getElementById("send-button").addEventListener("click", function () {
-            var message = document.getElementById("message-box").value;
-            document.getElementById("message-box").value = "";
-            var output = document.getElementById("output");
-            output.innerHTML += "<p><strong>You:</strong> " + message + "</p>";
-        });
-
-        // JavaScript code for playing the song
-        function playSong() {
-            var audio = document.getElementById("music");
-            if (audio.paused) {
-                audio.play();
-            } else {
-                audio.pause();
-            }
-        }
-    </script>
-</body>
-</html>
-
+            <
