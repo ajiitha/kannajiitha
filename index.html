@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cute Secret Messages</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            text-align: center;
+            background-color: #ffe4e1;
+            margin: 0;
+            padding: 0;
+        }
+        #container {
+            width: 80%;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 2px solid #ffb6c1;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            color: #ff1493;
+        }
+        #message-box {
+            width: 100%;
+            height: 200px;
+            border: 2px solid #ffb6c1;
+            padding: 10px;
+            resize: none;
+            font-family: 'Arial', sans-serif;
+            font-size: 16px;
+        }
+        #send-button {
+            background-color: #ff1493;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-family: 'Arial', sans-serif;
+            font-size: 18px;
+        }
+        #output {
+            text-align: left;
+            margin-top: 20px;
+        }
+        #output p {
+            background-color: #ffebcd;
+            border: 2px solid #ff1493;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+        }
+        .envelope {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+        }
+        .envelope img {
+            max-width: 100px;
+            border-radius: 5px;
+            transition: transform 0.3s ease-in-out;
+        }
+        .envelope img:hover {
+            transform: scale(1.1);
+        }
+        .envelope .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 5px;
+        }
+        .envelope .overlay img {
+            max-width: 80%;
+            max-height: 80%;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Cute Secret Messages</h1>
+        <div class="envelope">
+            <div class="overlay">
+                <img src="love.jpeg" alt="You and your boyfriend">
+            </div>
+        </div>
+        <br>
+        <textarea id="message-box" placeholder="Type your secret message here"></textarea>
+        <br>
+        <button id="send-button">Send</button>
+        <div id="output"></div>
+    </div>
+
+    <script>
+        // JavaScript code for handling messages
+        document.getElementById("send-button").addEventListener("click", function() {
+            var message = document.getElementById("message-box").value;
+            document.getElementById("message-box").value = "";
+            var output = document.getElementById("output");
+            output.innerHTML += "<p><strong>You:</strong> " + message + "</p>";
+        });
+    </script>
+</body>
+</html>
