@@ -25,7 +25,6 @@
             flex-direction: row; /* Display side by side */
             align-items: flex-start; /* Align to the top */
             justify-content: space-between; /* Separate messages and right side */
-            flex-wrap: wrap; /* Wrap to the next line if necessary */
         }
         .left-side {
             width: 48%; /* Adjust width for left side */
@@ -51,7 +50,7 @@
             font-family: 'Arial', sans-serif;
             font-size: 16px;
         }
-        #send-button, .upload-button {
+        #send-button {
             background-color: #ff1493;
             color: #fff;
             border: none;
@@ -79,7 +78,7 @@
             cursor: pointer;
         }
         .envelope img {
-            max-width: 200px; /* Increased the image size */
+            max-width: 200px; /* Adjust the max-width for the envelope image */
             border-radius: 5px;
             transition: transform 0.3s ease-in-out, /* Transition for hover */
                         opacity 0.3s ease-in-out; /* Transition for opacity */
@@ -112,6 +111,18 @@
             50% { transform: translateY(-10px); }
             100% { transform: translateY(0); }
         }
+        /* Styling for the upload button */
+        .upload-button {
+            background-color: #ff1493;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-family: 'Arial', sans-serif;
+            font-size: 18px;
+            margin-top: 20px;
+        }
         /* Styling for the upload popup */
         .popup {
             position: fixed;
@@ -133,12 +144,11 @@
         /* Styling for the images */
         .images {
             display: flex;
-            flex-wrap: wrap;
             justify-content: center;
-            margin-top: 20px;
+            flex-wrap: wrap;
         }
         .images img {
-            max-width: 200px;
+            max-width: 1500px; /* Adjust the max-width for love2.jpeg, love3.jpeg, and love4.jpeg */
             margin: 10px;
         }
     </style>
@@ -171,7 +181,6 @@
             </div>
             <br>
             <label for="file-upload" class="upload-button">Choose file</label>
-            <input type="file" id="file-upload" class="file-input" accept="image/*">
         </div>
     </div>
 
@@ -185,9 +194,9 @@
 
     <!-- Images section -->
     <div class="images">
-        <img src="love2.jpeg" alt="Love 2">
-        <img src="love3.jpeg" alt="Love 3">
-        <img src="love4.jpeg" alt="Love 4">
+        <img src="love2.jpeg" alt="You and your boyfriend">
+        <img src="love3.jpeg" alt="You and your boyfriend">
+        <img src="love4.jpeg" alt="You and your boyfriend">
     </div>
 
     <script>
@@ -210,9 +219,9 @@
         }
 
         // JavaScript code to open the NSFW warning popup
-        document.getElementById("file-upload").addEventListener("click", function () {
+        function openPopup() {
             document.getElementById("upload-popup").style.display = "block";
-        });
+        }
 
         // JavaScript code to close the NSFW warning popup
         function closePopup() {
@@ -221,5 +230,4 @@
     </script>
 </body>
 </html>
-
 
