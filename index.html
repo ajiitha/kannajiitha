@@ -115,21 +115,27 @@
         /* Styling for the upload popup */
         .popup {
             position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: #ffecf6; /* Cute pink background */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7); /* Slightly darker background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1;
+        }
+        .popup-content {
+            background-color: #fff;
             padding: 20px;
             border-radius: 10px; /* Rounded corners */
             text-align: center;
-            z-index: 1;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
         }
-        .popup p {
+        .popup-content p {
             font-size: 18px; /* Larger font size */
             margin-bottom: 20px;
         }
-        .popup button {
+        .popup-content button {
             background-color: #ff1493;
             color: #fff;
             border: none;
@@ -148,7 +154,7 @@
         }
         .images img {
             max-width: 600px; /* Adjusted max-width to make images fit */
-            margin: 10px;
+            margin: 200px;
         }
         /* Styling for the love letter section */
         .love-letter {
@@ -226,36 +232,6 @@
         }
     </style>
 </head>
-
-<!DOCTYPE html>
-<html>
-<head>
-    <!-- ... Your existing head content ... -->
-</head>
-<body>
-    <!-- Cute pop-up at the beginning -->
-    <div class="popup-overlay" id="welcome-popup">
-        <div class="popup-content">
-            <p>You're so lucky your girlfriend codes AND writes</p>
-            <img src="butterfly.gif" alt="Cute butterfly" style="width: 100px; height: 100px;">
-            <button onclick="closeWelcomePopup()">OK</button>
-        </div>
-    </div>
-
-    <!-- The rest of your existing HTML content ... -->
-
-    <script>
-        // JavaScript code to close the welcome popup
-        function closeWelcomePopup() {
-            var welcomePopup = document.getElementById("welcome-popup");
-            if (welcomePopup) {
-                welcomePopup.style.display = "none";
-            }
-        }
-    </script>
-</body>
-</html>
-
 <body>
     <div id="container">
         <div class="left-side">
