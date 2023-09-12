@@ -218,6 +218,18 @@
             margin: 5px 0;
             border-radius: 5px;
         }
+
+        /* Style for zoomable image */
+        .zoomable-image-container {
+            position: relative;
+        }
+        .zoomable-image {
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .zoomable-image:hover {
+            transform: scale(1.2);
+        }
     </style>
 </head>
 <body>
@@ -263,7 +275,9 @@
     <!-- Love Letter section -->
     <div class="love-letter">
         <h2>Some Cheese to Ease Your Day</h2>
-        <img src="letter2.jpeg" alt="Some Cheese" style="max-width: 900px; border-radius: 10px; margin: 20px 0;">
+        <div class="zoomable-image-container">
+            <img class="zoomable-image" src="letter2.jpeg" alt="Cheese Image">
+        </div>
         <h2>Love Letter from Ajiitha 9/11/2023</h2>
         <div class="letter-content">
             <p>Dear Kanna,</p>
@@ -331,6 +345,5 @@
     </script>
 </body>
 </html>
-
 
 
