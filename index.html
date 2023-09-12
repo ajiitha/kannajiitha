@@ -226,6 +226,36 @@
         }
     </style>
 </head>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- ... Your existing head content ... -->
+</head>
+<body>
+    <!-- Cute pop-up at the beginning -->
+    <div class="popup-overlay" id="welcome-popup">
+        <div class="popup-content">
+            <p>You're so lucky your girlfriend codes AND writes</p>
+            <img src="butterfly.gif" alt="Cute butterfly" style="width: 100px; height: 100px;">
+            <button onclick="closeWelcomePopup()">OK</button>
+        </div>
+    </div>
+
+    <!-- The rest of your existing HTML content ... -->
+
+    <script>
+        // JavaScript code to close the welcome popup
+        function closeWelcomePopup() {
+            var welcomePopup = document.getElementById("welcome-popup");
+            if (welcomePopup) {
+                welcomePopup.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
+
 <body>
     <div id="container">
         <div class="left-side">
